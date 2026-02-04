@@ -1,0 +1,115 @@
+% !TEX program = lualatex
+% Dieses Dokument soll mit LuaLaTeX kompiliert werden
+
+% --------------------------------------------------
+% Dokumentklasse: KOMA-Script Briefklasse
+% --------------------------------------------------
+\documentclass[
+  paper=a4,        % Papierformat
+  fontsize=11pt,   % Grundschriftgröße
+  parskip=half,    % Abstand zwischen Absätzen
+  DIV=15           % Satzspiegel (Layout)
+]{scrlttr2}
+
+% --------------------------------------------------
+% Spracheinstellungen
+% --------------------------------------------------
+% polyglossia ist die moderne Sprachverwaltung
+% für LuaLaTeX und XeLaTeX
+\usepackage{polyglossia}
+\setdefaultlanguage{german}
+
+% --------------------------------------------------
+% Schriftarten
+% --------------------------------------------------
+% fontspec erlaubt die Nutzung von Systemschriften
+\usepackage{fontspec}
+\setmainfont{XCharter}
+
+% --------------------------------------------------
+% Mikrotypografie
+% --------------------------------------------------
+% microtype verbessert den Grauwert des Textes
+% (Abstände, Randausgleich, Umbrüche)
+\usepackage{microtype}
+
+% --------------------------------------------------
+% Farben
+% --------------------------------------------------
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{1F4E79}
+
+% --------------------------------------------------
+% Absenderdaten
+% --------------------------------------------------
+% Diese Variablen speichern nur Daten.
+% Ob sie sichtbar sind, entscheidet das Layout.
+\setkomavar{fromname}{Max Mustermann}
+\setkomavar{fromaddress}{%
+  Musterstraße 12\\
+  12345 Musterstadt}
+\setkomavar{firsthead}{
+  \vspace*{5mm}\\
+  Max Mustermann\\
+  Telefon: +49 170 1234567\\
+  E-Mail: max.mustermann@example.com\\
+  Musterstraße 12,\\
+  12345 Musterstadt\\[1ex]
+}
+
+% Falls dein Name nicht unter den Brief geschrieben
+% werden soll, kannst du die nächste Zeile auskommentieren:
+% \setkomavar{signature}{}
+
+% --------------------------------------------------
+% Betreff und Datum
+% --------------------------------------------------
+\setkomavar{subject}{Bewerbung um ein Schülerpraktikum im Bereich Informatik}
+\setkomavar{date}{\today}
+
+% --------------------------------------------------
+% Dokumentbeginn
+% --------------------------------------------------
+\begin{document}
+
+% --------------------------------------------------
+% Briefumgebung
+% --------------------------------------------------
+\begin{letter}{%
+  Beispiel GmbH\\
+  Personalabteilung\\
+  Beispielweg 5\\
+  12345 Musterstadt}
+
+% Anrede
+\opening{Sehr geehrte Damen und Herren,}
+
+zurzeit besuche ich die 9.\ Klasse des Mustergymnasiums in Musterstadt.
+Im Rahmen der schulischen Berufsorientierung möchte ich gern ein
+zweiwöchiges Schülerpraktikum absolvieren und bewerbe mich hiermit bei
+Ihnen.
+
+Besonders interessieren mich die Bereiche Informatik und Technik.
+In der Schule beschäftige ich mich unter anderem mit Programmierung,
+Datenbanken und praktischen Experimenten.
+Außerdem dokumentiere ich meine Ergebnisse regelmäßig, zum Beispiel mit
+\LaTeX.
+
+Ihr Unternehmen ist für mich besonders interessant, da Sie praxisnah mit
+moderner Software arbeiten und Einblicke in reale Arbeitsabläufe
+ermöglichen.
+Gern würde ich während des Praktikums Neues lernen und erste Erfahrungen
+im Arbeitsalltag sammeln.
+
+Über eine Rückmeldung oder eine Einladung zu einem Gespräch würde ich
+mich sehr freuen. Anbei übersende ich Ihnen meinen Lebenslauf.
+
+% Grußformel
+\closing{Mit freundlichen Grüßen}
+
+\end{letter}
+
+% --------------------------------------------------
+% Dokumentende
+% --------------------------------------------------
+\end{document}
