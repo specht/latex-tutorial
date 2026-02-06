@@ -14,8 +14,8 @@
 % Schrift & Sprache
 % ------------------------------------------------------------
 \usepackage{fontspec}
-\setmainfont{Latin Modern Roman}
-\setsansfont{Latin Modern Sans}
+\setmainfont{XCharter}
+\setsansfont{Lato}
 
 % ------------------------------------------------------------
 % Seitenlayout
@@ -98,7 +98,7 @@
 % ------------------------------------------------------------
 \newcommand{\cventry}[2]{%
   \begin{tabularx}{\textwidth}
-    {@{}>{\raggedright\arraybackslash\small}p{3.5cm} X@{}}
+    {@{}>{\raggedright\arraybackslash}p{3.5cm} X@{}}
     \textbf{#1} & #2
   \end{tabularx}
   \par\vspace{2pt}
@@ -138,7 +138,7 @@ Telefon:\tabto{2cm}+44 20 5550 0111
 \section{Schulische Ausbildung}
 
 \cventry
-  {1991--1998}
+  {1991 -- 1998}
   {%
     \textbf{Hogwarts-Schule für Hexerei und Zauberei}\newline
     \emph{Schottland}
