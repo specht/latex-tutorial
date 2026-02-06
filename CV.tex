@@ -1,0 +1,226 @@
+% !TEX program = lualatex
+% ------------------------------------------------------------
+% Lebenslauf – Beispielvorlage (LuaLaTeX)
+% Kompilieren mit: lualatex hermione-granger-cv.tex
+%
+% Optional:
+% - Lege eine Datei "photo.jpg" neben diese .tex-Datei,
+%   um das Platzhalter-Foto zu ersetzen.
+% ------------------------------------------------------------
+
+\documentclass[11pt,a4paper]{article}
+
+% ------------------------------------------------------------
+% Schrift & Sprache
+% ------------------------------------------------------------
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+
+% ------------------------------------------------------------
+% Seitenlayout
+% ------------------------------------------------------------
+\usepackage[a4paper,margin=2.0cm]{geometry}
+\pagenumbering{gobble} % keine Seitenzahlen im Lebenslauf
+
+% ------------------------------------------------------------
+% Farben & Links
+% ------------------------------------------------------------
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{5A2E8A}
+% Du kannst die Akzentfarbe hier anpassen, z. B.
+% - 0D60AE für ein kräftiges Blau
+% - 5A2E8A für ein dunkles Lila
+% - 000000 für Schwarz
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=accent,
+  urlcolor=accent
+}
+
+% ------------------------------------------------------------
+% Abstände, Überschriften, Listen
+% ------------------------------------------------------------
+\usepackage[skip=3pt]{parskip} % kompakte Absatzabstände
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\titleformat{\section}
+  {\large\bfseries\sffamily\color{accent}}
+  {}{0pt}{}[\vspace{2pt}\hrule\vspace{3pt}]
+
+\titlespacing*{\section}{0pt}{12pt}{9pt}
+
+\setlist[itemize]{
+  leftmargin=*,
+  topsep=2pt,
+  itemsep=1pt,
+  parsep=0pt
+}
+
+% ------------------------------------------------------------
+% Tabellen & Layout-Helfer
+% ------------------------------------------------------------
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{tabto}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+% Silbentrennung global vermeiden (sauber für CVs)
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+% ------------------------------------------------------------
+% Foto-Box (echtes Foto oder Platzhalter)
+% ------------------------------------------------------------
+\newcommand{\photobox}{%
+  \IfFileExists{photo.jpg}{%
+    \includegraphics[
+      width=3.5cm,
+      height=4.5cm,
+      keepaspectratio
+    ]{photo.jpg}%
+  }{%
+    \fbox{%
+      \begin{minipage}[c][4.5cm][c]{3.5cm}
+        \centering\small Foto
+      \end{minipage}
+    }%
+  }%
+}
+
+% ------------------------------------------------------------
+% Einheitlicher Eintrag für alle CV-Zeilen
+% (linke Spalte: Zeitraum / Kategorie)
+% ------------------------------------------------------------
+\newcommand{\cventry}[2]{%
+  \begin{tabularx}{\textwidth}
+    {@{}>{\raggedright\arraybackslash\small}p{3.5cm} X@{}}
+    \textbf{#1} & #2
+  \end{tabularx}
+  \par\vspace{2pt}
+}
+
+% ============================================================
+% Dokumentbeginn
+% ============================================================
+\begin{document}
+
+% ------------------------------------------------------------
+% Kopfbereich mit Foto (Text läuft um das Foto herum)
+% ------------------------------------------------------------
+\noindent
+\begin{wrapfigure}[5]{r}{4cm}
+  \vspace{-12pt}
+  \centering
+  \photobox
+\end{wrapfigure}
+
+{\Huge\bfseries\sffamily Hermine Jean Granger}\par
+\vspace{-1pt}
+{\large\sffamily Schülerin}\par
+\vspace{4pt}
+
+{\sffamily
+Anschrift:\tabto{2cm}27 Maple Grove, Surrey GU21 4RF, United Kingdom\\
+E-Mail:\tabto{2cm}\href{mailto:h.granger@owlmail.co.uk}{h.granger@owlmail.co.uk}\\
+Telefon:\tabto{2cm}+44 20 5550 0111
+}
+
+\vspace{6pt}
+
+% ------------------------------------------------------------
+% Schulische Ausbildung
+% ------------------------------------------------------------
+\section{Schulische Ausbildung}
+
+\cventry
+  {1991--1998}
+  {%
+    \textbf{Hogwarts-Schule für Hexerei und Zauberei}\newline
+    \emph{Schottland}
+    \begin{itemize}
+      \item Schwerpunktfächer: Zauberkunst, Verteidigung, Arithmantik, Alte Runen
+      \item Sehr gute Leistungen und strukturierte Prüfungsvorbereitung
+      \item Aktive Mitarbeit in Lerngruppen und Tutorien
+    \end{itemize}
+  }
+
+\cventry
+  {bis 1991}
+  {%
+    \textbf{Allgemeinbildende Schule}\newline
+    \emph{England}
+    \begin{itemize}
+      \item Sehr gute Grundlagen in Sprachen, Mathematik und Naturwissenschaften
+      \item Starkes Leseinteresse und eigenständiges Lernen
+    \end{itemize}
+  }
+
+% ------------------------------------------------------------
+% Projekterfahrung & Engagement
+% ------------------------------------------------------------
+\section{Projekterfahrung \& Engagement}
+
+\cventry
+  {laufend}
+  {%
+    \textbf{Projektorganisation und Lernkoordination}\newline
+    \emph{Schulprojekte und Arbeitsgruppen}
+    \begin{itemize}
+      \item Planung von Lern- und Projektphasen (Zeitpläne, Aufgabenverteilung)
+      \item Recherche und Aufbereitung komplexer Inhalte
+      \item Moderation von Gruppenentscheidungen
+    \end{itemize}
+  }
+
+\cventry
+  {projektbezogen}
+  {%
+    \textbf{Soziales Engagement}\newline
+    \emph{Schulinitiative}
+    \begin{itemize}
+      \item Entwicklung von Informationsmaterial
+      \item Organisation kleiner Kampagnen und Veranstaltungen
+    \end{itemize}
+  }
+
+% ------------------------------------------------------------
+% Kompetenzen
+% ------------------------------------------------------------
+\section{Kompetenzen}
+
+\cventry
+  {Stärken}
+  {Analytisches Denken, sehr gute Merkfähigkeit, klare Kommunikation}
+
+\cventry
+  {Arbeitsweise}
+  {Strukturiert, gewissenhaft, termintreu, eigenständig}
+
+\cventry
+  {Kenntnisse}
+  {%
+    \vspace*{-4mm}
+    \begin{itemize}
+      \item Recherche und Textarbeit
+      \item Präsentation und Erklärung komplexer Inhalte
+      \item Organisation und Zeitplanung
+    \end{itemize}
+  }
+
+\cventry
+  {Sprachen}
+  {Englisch (sehr gut)}
+
+% ------------------------------------------------------------
+% Interessen
+% ------------------------------------------------------------
+\section{Interessen}
+
+Lesen, Lernen, Projektarbeit, gesellschaftliches Engagement
+
+\end{document}
