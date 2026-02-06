@@ -1,0 +1,252 @@
+% !TEX program = lualatex
+% ============================================================
+% LuaLaTeX-Dokument – Schulische Ausarbeitung
+% ============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ------------------------------------------------------------
+% Sprache
+% ------------------------------------------------------------
+\usepackage{polyglossia}
+\setdefaultlanguage{german}
+
+% ------------------------------------------------------------
+% Layout & Typografie
+% ------------------------------------------------------------
+\usepackage[margin=20mm]{geometry}
+\usepackage{microtype}
+\usepackage{setspace}
+\setstretch{1.2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% ------------------------------------------------------------
+% Schrift
+% ------------------------------------------------------------
+\usepackage{fontspec}
+\setmainfont{XCharter}
+
+% ------------------------------------------------------------
+% Mathematik (optional)
+% ------------------------------------------------------------
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+
+% ------------------------------------------------------------
+% Tabellen & Listen
+% ------------------------------------------------------------
+\usepackage{tabularx}
+\usepackage{enumitem}
+
+% ------------------------------------------------------------
+% Literatur
+% ------------------------------------------------------------
+\usepackage[
+  backend=biber,
+  style=authoryear,
+  sorting=nyt
+]{biblatex}
+\addbibresource{literatur.bib}
+
+% ------------------------------------------------------------
+% Links
+% ------------------------------------------------------------
+\usepackage[hidelinks]{hyperref}
+
+% ------------------------------------------------------------
+% Überschriften
+% ------------------------------------------------------------
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\bfseries}{\thesubsection}{0.8em}{}
+
+% ============================================================
+\begin{document}
+
+% ============================================================
+% TITELSEITE
+% ============================================================
+\begin{titlepage}
+\centering
+
+\vspace*{2cm}
+
+{\Large\bfseries Schriftliche Ausarbeitung}
+
+\vspace{24pt}
+
+{\huge\bfseries
+Digitale Assistenzsysteme im schulischen Lernen\\
+\vspace*{2mm}
+Chancen, Grenzen und Perspektiven
+}
+
+\vspace{24pt}
+
+\begin{tabular}{rl}
+Name:      & Max Mustermann \\
+Kurs:      & Informatik \\
+Lehrkraft: & Frau Beispiel \\
+Schule:    & Mustergymnasium Musterstadt \\
+Schuljahr: & 2025 / 2026 \\
+\end{tabular}
+
+\vfill
+Musterstadt, \today
+\end{titlepage}
+
+% ============================================================
+% INHALTSVERZEICHNIS
+% ============================================================
+\tableofcontents
+\newpage
+
+% ============================================================
+% EINLEITUNG
+% ============================================================
+\section{Einleitung}
+
+Digitale Technologien prägen den schulischen Alltag zunehmend. Neben
+Lernplattformen, digitalen Schulbüchern und Online-Abgaben werden auch
+Systeme diskutiert, die Lernprozesse gezielt begleiten und beeinflussen
+sollen.
+
+Solche digitalen Assistenzsysteme versprechen eine individuellere
+Unterstützung von Lernenden, etwa durch angepasste Aufgabenformate oder
+automatisierte Rückmeldungen.\footnote{Der Begriff ist nicht eindeutig
+definiert und überschneidet sich unter anderem mit „adaptiven
+Lernsystemen“ oder „intelligenten Tutorensystemen“.}
+Dafür werden Daten wie Bearbeitungszeiten, typische Fehler oder bisherige
+Lernfortschritte ausgewertet \parencite{mueller2022}.
+
+Ziel dieser Ausarbeitung ist es, diese Systeme im schulischen Kontext
+einzuordnen und sowohl ihre Potenziale als auch ihre Grenzen aufzuzeigen.
+
+% ============================================================
+% GRUNDLAGEN
+% ============================================================
+\section{Grundlagen digitaler Assistenzsysteme}
+
+Bevor konkrete Einsatzmöglichkeiten betrachtet werden, ist eine
+grundlegende Klärung zentraler Begriffe und technischer Prinzipien
+notwendig. Dadurch lässt sich besser einschätzen, welche Erwartungen an
+digitale Assistenzsysteme realistisch sind.
+
+\subsection{Begriffliche Einordnung}
+
+Digitale Assistenzsysteme sind softwarebasierte Werkzeuge, die Lernende
+während des Lernprozesses begleiten und unterstützen. Im Gegensatz zu
+klassischen Übungsprogrammen reagieren sie auf das individuelle
+Nutzungsverhalten und passen Inhalte oder Rückmeldungen entsprechend an.
+
+\textcite{schmidt2023} beschreibt solche Systeme als datenbasierte Formen
+der Lernbegleitung, die individuelle Lernpfade ermöglichen können.
+Entscheidend ist dabei, dass die Funktionsweise für Lehrkräfte und
+Lernende nachvollziehbar bleibt, da ansonsten Akzeptanzprobleme
+entstehen können.
+
+\subsection{Technische Grundlagen}
+
+Technisch beruhen viele Assistenzsysteme auf vergleichsweise einfachen
+Ansätzen. Häufig kommen regelbasierte Modelle oder feste
+Entscheidungsstrukturen zum Einsatz, die bestimmte Reaktionen auf
+typische Fehler oder Bearbeitungsmuster auslösen.
+
+Komplexere Verfahren der künstlichen Intelligenz werden im schulischen
+Kontext eher zurückhaltend eingesetzt. Neben technischen Anforderungen
+spielen hier auch Fragen der Erklärbarkeit eine Rolle.
+
+Ein Überblick über derzeit genutzte technische Ansätze findet sich unter
+anderem in öffentlichen Bildungsportalen \parencite{bildungsportal2024}.
+
+% ============================================================
+% EINSATZBEREICHE
+% ============================================================
+\section{Mögliche Einsatzbereiche im Unterricht}
+
+Im Unterricht eröffnen digitale Assistenzsysteme unterschiedliche
+Einsatzmöglichkeiten. Sie betreffen sowohl das individuelle Lernen als
+auch die Organisation und Planung von Unterricht.
+
+\subsection{Individuelle Förderung}
+
+Ein häufig genannter Vorteil digitaler Assistenzsysteme ist die
+Möglichkeit zur individuellen Förderung. Lernende können in ihrem
+eigenen Tempo arbeiten und erhalten Rückmeldungen, die auf ihre
+persönlichen Schwierigkeiten zugeschnitten sind.
+
+Gerade in Klassen mit sehr unterschiedlichen Vorkenntnissen kann dies
+entlastend wirken. Während einige Schülerinnen und Schüler zusätzliche
+Übungen benötigen, können andere bereits weiterführende Aufgaben
+bearbeiten.
+
+Studien legen nahe, dass adaptive Aufgabenformate insbesondere in
+heterogenen Lerngruppen positive Effekte haben können
+\parencite[vgl.][]{mueller2022}. Gleichzeitig zeigt sich, dass schlecht
+gestaltete Rückmeldungen auch verwirrend wirken können.
+
+\subsection{Unterstützung der Lehrkräfte}
+
+Digitale Assistenzsysteme können auch Lehrkräfte unterstützen, etwa
+durch Übersichten über den Lernstand einer Klasse oder Hinweise auf
+häufige Fehler.
+
+Diese Informationen können bei der Planung von Unterricht helfen oder
+Anhaltspunkte liefern, welche Inhalte noch einmal aufgegriffen werden
+sollten. Sie ersetzen jedoch keine pädagogische Entscheidung.
+
+% ============================================================
+% HERAUSFORDERUNGEN
+% ============================================================
+\section{Herausforderungen und Grenzen}
+
+Neben möglichen Vorteilen bringen digitale Assistenzsysteme auch neue
+Probleme und Fragestellungen mit sich, die im schulischen Kontext nicht
+ignoriert werden dürfen.
+
+\subsection{Datenschutz}
+
+Ein zentrales Problem ist der Umgang mit personenbezogenen Daten. Da
+Lernverhalten analysiert und teilweise langfristig gespeichert wird,
+müssen klare Regeln zur Datenspeicherung und -verarbeitung gelten.
+
+Besonders sensibel ist dieser Aspekt im schulischen Umfeld, da
+Schülerinnen und Schüler häufig minderjährig sind und sich in einem
+Abhängigkeitsverhältnis zur Institution Schule befinden
+\parencite{bildungsportal2024}.
+
+Ohne transparente Informationen darüber, welche Daten erhoben werden
+und zu welchem Zweck, kann schnell Misstrauen entstehen.
+
+\subsection{Pädagogische Verantwortung}
+
+Digitale Systeme können Lernprozesse unterstützen, sie können jedoch
+keine pädagogische Beziehung ersetzen.
+
+Motivation, soziale Interaktion und individuelle Begleitung bleiben
+zentrale Aufgaben von Lehrkräften. Assistenzsysteme sollten daher als
+Ergänzung verstanden werden und nicht als Ersatz für pädagogisches
+Handeln.
+
+% ============================================================
+% FAZIT
+% ============================================================
+\section{Fazit}
+
+Digitale Assistenzsysteme bieten im schulischen Kontext interessante
+Möglichkeiten, Lernprozesse individueller zu gestalten und Lehrkräfte
+bei organisatorischen Aufgaben zu unterstützen.
+
+Gleichzeitig zeigen sich deutliche Grenzen in Bezug auf Datenschutz,
+Erklärbarkeit und pädagogische Verantwortung. Ein sinnvoller Einsatz
+erfordert daher klare Rahmenbedingungen, transparente Systeme und eine
+kritische Auseinandersetzung mit ihren Auswirkungen.
+
+% ============================================================
+% LITERATUR
+% ============================================================
+\printbibliography
+
+\end{document}
